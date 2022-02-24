@@ -1,17 +1,15 @@
-const cart = () => {
-	const cartBtn = document.querySelector('.button-cart'); //собираем все селекторы с подходящим именем в document и возвращаем первый из них в константу
-	const cart = document.getElementById('modal-cart'); //находим первый эллемент по id в документе и присваиваем в константу
-	const cartClose = cart.querySelector('.modal-close'); // собираем все селекторы в cart
+const cart = () => {//создаем функцию для изоляции переменных
+	const cartBtn = document.querySelector('.button-cart');//присваиваем константе cartBtn первый button-cart из document
+	const cart = document.getElementById('modal-cart');//присваиваем константе cart единственный id #modal-cart из document
+	const cartClose = cart.querySelector('.modal-close');//присваиваем константе cartClose первый modal-close в cart
 
-	cartBtn.addEventListener('click', () => {
-		cart.style.display = 'flex'; // свойство подключится инлайново
+	cartBtn.addEventListener('click', () => {//вешаем обработчик событий по клику на cartBtn
+		cart.style.display = 'flex';//свойство подключится инлайново
 	});
 
-	cartClose.addEventListener('click', () => {
-		cart.style.display = ''; // инлайновое свойсво обнулится, но из тега div style не пропадет
+	cartClose.addEventListener('click', () => {//вешаем обработчик событий по клику на cartClose
+		cart.style.display = '';//инлайновое свойсво обнулится, но из тега div, style не пропадет
 	});
-
-
 };
 
-cart();
+cart();//вызываем функцию
