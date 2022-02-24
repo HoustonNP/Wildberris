@@ -10,6 +10,8 @@ const cart = () => {
 	cartClose.addEventListener('click', () => {
 		cart.style.display = ''; // инлайновое свойсво обнулится, но из тега div style не пропадет
 	});
+
+
 };
 
 cart();
