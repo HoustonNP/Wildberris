@@ -13,3 +13,8 @@ const cart = () => {//создаем функцию для изоляции пе
 };
 
 cart();//вызываем функцию
+
+//const viewAll = document.querySelector('.more');
+//viewAll.addEventListener('click', () => {
+//	window.location.href = 'goods.html';
+//});
