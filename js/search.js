@@ -47,6 +47,12 @@ const search = function () {//создаем функцию для изоляц�
 			});
 	};
 
+	input.addEventListener('keydown', (e) => {
+		if (e.key === 'Enter') {
+			getData(input.value);
+		}
+	})
+
 	searchBtn.addEventListener('click', () => {//вешаем обработчик событий по клику на searchBtn
 		getData(input.value);//передаем фунции текущее значение input
 	})

@@ -1,6 +1,7 @@
 const getGoods = () => {//создаем функцию для изоляции переменных
 
 	const links = document.querySelectorAll('.navigation-link');//присваиваем константе links массив всех navigation-link из document
+	const more = document.querySelector('.more');
 
 	const renderGoods = (goods) => {
 		const goodsContaner = document.querySelector('.long-goods-list');//получаем массив элементов из класса long-goods-list
@@ -48,7 +49,7 @@ const getGoods = () => {//создаем функцию для изоляции 
 
 	links.forEach((link) => {//аргументом принимаем функцию и запускаем для каждого эллемента массива links
 		link.addEventListener('click', (event) => {//оброботчик события по клику
-			event.preventDefault();//блокируем стандартный переход ссылок по url
+
 			const linkValue = link.textContent//текст из ссылки записываем в переменную
 			const category = link.dataset.field//значение из data-field в html записываем в переменную
 			getData(linkValue, category);//вызываем функцию получения данных от сервера только при клике
@@ -58,6 +59,13 @@ const getGoods = () => {//создаем функцию для изоляции 
 	//если в localStorage есть что-то с ключем goods и мы находимся на странице товара, то отправляем данные на рендер
 	if (localStorage.getItem('goods') && window.location.pathname === "/wildberris-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA/goods.html") {
 		renderGoods(JSON.parse(localStorage.getItem('goods')))//отрисовка данных в консоле будет проходить только на странице товаров
+	}
+
+	if (more) {
+		more.addEventListener('click', (t) => {
+			t.preventDefault();
+			getData();
+		})
 	}
 };
 
