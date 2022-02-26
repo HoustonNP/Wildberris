@@ -1,5 +1,5 @@
 # https://houstonnp.github.io/Wildberris/
-### Учебный проэкт
+### Учебный проект
 ### Технологии:
 - HTML
 - CSS
